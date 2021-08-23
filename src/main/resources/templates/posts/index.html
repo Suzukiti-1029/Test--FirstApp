@@ -11,6 +11,11 @@
       <input name="inputText" type="text">
       <button type="submit">表示</button>
     </form>
-    <h3 th:text="${inputText}"></h3>
+    <p th:text="${inputText}"></p>
+    <div th:each="data: ${dataList}">
+      <span th:text="${data.id}"></span>
+      <span th:text="${data.message}"></span>
+      <br>
+    </div>
   </body>
 </html>
