@@ -13,4 +13,11 @@ public class PostsController {
     model.addAttribute("describe", "ここでは新規投稿ができます");
     return "posts/index";
   }
+
+  @GetMapping("/post")
+  public String post(String inputText, Model model) {
+    model.addAttribute("describe", "ここでは新規投稿ができます");
+    model.addAttribute("inputText", inputText);
+    return "posts/index";
+  }
 }
