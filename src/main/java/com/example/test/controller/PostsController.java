@@ -18,7 +18,7 @@ public class PostsController {
 
   @GetMapping("/index")
   public String index(Model model) {
-    String sql = "SELECT * FROM message_table";
+    String sql = "SELECT * FROM message_table ORDER BY id DESC";
     List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
     model.addAttribute("dataList", list);
     model.addAttribute("describe", "ここでは新規投稿ができます");
