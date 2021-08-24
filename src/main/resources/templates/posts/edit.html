@@ -7,9 +7,10 @@
   <body>
     <h1>編集ページ</h1>
     <p th:text="${describe}"></p>
-    <form method="post" action="#" th:action="@{/posts/edit}" th:object="${form}">
+    <form method="post" action="#" th:action="@{'/posts/edit/' + ${form.id}}" th:object="${form}">
       <input id="message" name="message" type="text" th:value="${form.message}">
       <button type="submit">変更</button>
     </form>
+    <a href="#" th:href="@{/posts/index/}"><button>もどる</button></a>
   </body>
 </html>
