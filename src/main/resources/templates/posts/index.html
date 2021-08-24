@@ -9,7 +9,9 @@
     <p th:text="${describe}"></p>
     <a href="/posts/new/">投稿ページ</a>
     <div th:each="data: ${dataList}">
-      <span th:text="${data.id}"></span>
+      <a href="/posts/edit/">編集 </a>
+      <a href="#">削除 </a>
+      <span th:text="${data.id} "></span>
       <span th:text="${data.message}"></span>
       <br>
     </div>
