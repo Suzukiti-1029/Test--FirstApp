@@ -7,11 +7,11 @@
   <body>
     <h1>トップページ</h1>
     <p th:text="${describe}"></p>
+
     <form method="get" action="/posts/post">
       <input name="inputText" type="text">
-      <button type="submit">表示</button>
+      <button type="submit">保存</button>
     </form>
-    <p th:text="${inputText}"></p>
     <div th:each="data: ${dataList}">
       <span th:text="${data.id}"></span>
       <span th:text="${data.message}"></span>

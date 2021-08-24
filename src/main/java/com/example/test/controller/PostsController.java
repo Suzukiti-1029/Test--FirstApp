@@ -26,9 +26,8 @@ public class PostsController {
   }
 
   @GetMapping("/post")
-  public String post(String inputText, Model model) {
-    model.addAttribute("describe", "ここでは新規投稿ができます");
-    model.addAttribute("inputText", inputText);
-    return "posts/index";
+  public String post(Model model) {
+    model.addAttribute("describe", "入力の保存が完了しました");
+    return "posts/post";
   }
 }
