@@ -33,9 +33,11 @@ public class PostsController {
     return "posts/new";
   }
 
-  @GetMapping("/post")
-  public String create(Model model) {
+  @PostMapping("/create")
+  public String create(Form form, Model model) {
+    String sql = "INSERT INTO message_table(message) VALUE (?)";
+    jdbcTemplate.update(sql, form.getMessage());
     model.addAttribute("describe", "入力の保存が完了しました");
-    return "posts/post";
+    return "posts/create";
   }
 }
