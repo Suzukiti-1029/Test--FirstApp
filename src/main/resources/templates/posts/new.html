@@ -7,8 +7,8 @@
   <body>
     <h1>投稿ページ</h1>
     <p th:text="${describe}"></p>
-    <form method="get" action="/posts/post">
-      <input name="inputText" type="text">
+    <form method="post" action="#" th:action="@{/posts/create}" th:object="${form}">
+      <input id="message" name="message" type="text" th:value="${form.message}">
       <button type="submit">投稿</button>
     </form>
   </body>
