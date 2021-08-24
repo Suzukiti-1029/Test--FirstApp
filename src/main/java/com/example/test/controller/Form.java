@@ -9,5 +9,6 @@ public class Form {
   public String getMessage() { return this.message; }
 
   // Setter
+  public void setId(int id) { this.id = id; }
   public void setMessage(String message) { this.message = message; }
 }
