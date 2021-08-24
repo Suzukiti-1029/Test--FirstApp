@@ -5,8 +5,11 @@
     <title>てすと</title>
   </head>
   <body>
-    <h1>完了ページ</h1>
+    <h1>投稿ページ</h1>
     <p th:text="${describe}"></p>
-    <a href="/posts/index">トップページ</a>
+    <form method="get" action="/posts/post">
+      <input name="inputText" type="text">
+      <button type="submit">投稿</button>
+    </form>
   </body>
 </html>
