@@ -54,6 +54,8 @@ public class PostsController {
 
   @PostMapping("/edit/{id}")
   public String update(Form form, @PathVariable int id, Model model) {
+    String sql = "UPDATE message_table SET message = ? WHERE id = " + id;
+    jdbcTemplate.update(sql, form.getMessage());
     model.addAttribute("describe", "投稿の更新が完了しました");
     return "/posts/update";
   }
