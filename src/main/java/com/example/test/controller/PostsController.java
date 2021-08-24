@@ -43,12 +43,18 @@ public class PostsController {
   }
 
   @GetMapping("/edit/{id}")
-  public String edit(@ModelAttribute Form form, @PathVariable String id, Model model) {
+  public String edit(@ModelAttribute Form form, @PathVariable int id, Model model) {
     String sql = "SELECT * FROM message_table WHERE id = " + id;
     Map<String, Object> map = jdbcTemplate.queryForMap(sql);
     form.setId((int)map.get("id"));
     form.setMessage((String)map.get("message"));
     model.addAttribute("describe", "ここでは投稿の編集ができます");
     return "/posts/edit";
+  }
+
+  @PostMapping("/edit/{id}")
+  public String update(Form form, @PathVariable int id, Model model) {
+    model.addAttribute("describe", "投稿の更新が完了しました");
+    return "/posts/update";
   }
 }
