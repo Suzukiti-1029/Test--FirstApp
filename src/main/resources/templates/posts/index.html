@@ -10,7 +10,9 @@
     <a href="#" th:href="@{/posts/new/}">投稿ページ</a>
     <div th:each="data: ${dataList}">
       <a href="#" th:href="@{'/posts/edit/' + ${data.id}}"><button>編集</button></a>
-      <a href="#"><button>削除</button></a>
+      <form method="post" action="#" th:action="@{'/posts/destroy/' + ${data.id}}" style="display: inline;">
+        <button type="submit">削除</button>
+      </form>
       <span th:text="${data.id}"></span>
       <span th:text="${data.message}"></span>
       <br>
