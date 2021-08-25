@@ -62,6 +62,8 @@ public class PostsController {
 
   @PostMapping("/destroy/{id}")
   public String destroy(@PathVariable int id, Model model) {
+    String sql = "DELETE FROM message_table WHERE id = " + id;
+    jdbcTemplate.update(sql);
     model.addAttribute("describe", "投稿の削除が完了しました");
     return "/posts/destroy";
   }
